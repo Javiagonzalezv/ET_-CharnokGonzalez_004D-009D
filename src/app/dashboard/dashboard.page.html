@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="dashboard-container">
+    <img src="assets/colegio.jpg" alt="Dashboard" class="dashboard-image"/>
+    <ion-button expand="full" [routerLink]="['/class-management']" shape="round">Manejar Clases</ion-button>
+    <ion-button expand="full" [routerLink]="['/attendance-list']" shape="round">Lista de asistencias</ion-button>
+    <ion-button expand="full" [routerLink]="['/absence-justification']" shape="round">Justificación de inasistencias</ion-button>
+    <ion-button expand="full" [routerLink]="['/profile']" shape="round">Perfil</ion-button>
+  </div>
+</ion-content>

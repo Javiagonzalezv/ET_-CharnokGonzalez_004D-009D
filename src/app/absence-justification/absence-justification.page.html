@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Justificación por inasistencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Asignatura</ion-label>
+    <ion-select [(ngModel)]="selectedSubject" (ionChange)="onSubjectChange()">
+      <ion-select-option *ngFor="let subject of subjects" [value]="subject">{{ subject }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha</ion-label>
+    <ion-datetime [(ngModel)]="selectedDate" displayFormat="MMM DD, YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="full" (click)="loadJustifications()" shape="round">Cargar Justificación</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let justification of justifications">
+      <ion-label>
+        {{ justification.studentName }}: {{ justification.reason }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

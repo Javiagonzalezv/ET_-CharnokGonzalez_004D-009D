@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Muestra aquí la lista de asistencia -->
+  <ion-list>
+    <ion-card *ngFor="let student of students">
+      <ion-item>
+        <ion-label>{{ student }}</ion-label>
+      </ion-item>
+    </ion-card>
+    <!-- Agrega más elementos según sea necesario -->
+    <ion-button expand="full" color="success" (click)="submitAttendance()">
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      Enviar Asistencia
+    </ion-button>
+  </ion-list>
+</ion-content>

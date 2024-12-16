@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manejo de la clase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Asignatura</ion-label>
+    <ion-select [(ngModel)]="selectedSubject" name="subject" placeholder="Seleccione una clase">
+      <ion-select-option *ngFor="let subject of subjects" [value]="subject">{{ subject }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="startAttendance()" shape="round">Tomar Asistencia</ion-button>
+  <ion-button expand="full" [routerLink]="['/attendance-list']" shape="round">Ver Asistencias</ion-button>
+</ion-content>

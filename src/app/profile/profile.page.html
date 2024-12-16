@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">profile</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/dashboard"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+<ion-content>
+  <div>
+      <ion-item>
+        <ion-label>Perfil </ion-label>
+      </ion-item>
+    </div>
+    <div><ion-item>
+      <ion-label>Nombre: {{nombre}}  {{apellido}}</ion-label>
+    </ion-item>
+    </div>
+    <div>
+    <ion-item>
+      <ion-label>Correo: {{correo}}</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
