@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>justificacion</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="justificaForm">
+    <ion-item>
+      <ion-input type="text" label="asignatura:" 
+      labelPlacement="floating" placeholder="Ingrese la asignatura:" 
+      name="asignatura" formControlName="asignatura"></ion-input>
+    </ion-item>
+  
+      <div id="asignatura" *ngIf="justificacion.get('asignatura')?.invalid && (justificacion.get('asignatura')?.dirty || 
+                  justificacion.get('asignatura')?.touched)">
+          <div id="alerta" *ngIf="justificacion.get('asignatura')?.hasError('required')">
+            *la asignatura es obligatorio
+          </div>
+      </div>
+    <ion-item>
+      <ion-input type="text" label="motivo:" 
+      labelPlacement="floating" placeholder="Ingrese la descripcion:" 
+      name="descripcion" formControlName="descripcion"></ion-input>
+    </ion-item>
+  
+      <div id="alerta" *ngIf="justificacion.get('descripcion')?.invalid && (justificacion.get('descripcion')?.dirty || 
+                  justificacion.get('descripcion')?.touched)">
+          <div id="alerta" *ngIf="justificacion.get('descripcion')?.hasError('required')">
+            *el motivo es obligatorio
+          </div>
+      </div>
+    
+    <ion-item>
+      <ion-input type="date" label="fecha:" 
+      labelPlacement="floating" placeholder="Ingrese la fecha:" 
+      name="fecha" formControlName="fecha"></ion-input>
+    </ion-item>
+  
+    <div id="alerta" *ngIf="justificacion.get('fecha')?.invalid && (justificacion.get('fecha')?.dirty || 
+                justificacion.get('fecha')?.touched)">
+          <div id="alerta" *ngIf="justificacion.get('fecha')?.hasError('required')">
+              *la fecha es obligatoria
+          </div>
+    </div>
+
+    <ion-item>
+      <ion-input type="text" label="profesor:" 
+      labelPlacement="floating" placeholder="Ingrese el profesor:" 
+      name="profesor" formControlName="profesor"></ion-input>
+    </ion-item>
+  
+      <div id="alerta" *ngIf="justificacion.get('profesor')?.invalid && (justificacion.get('profesor')?.dirty || 
+                  justificacion.get('profesor')?.touched)">
+          <div id="alerta" *ngIf="justificacion.get('profesor')?.hasError('required')">
+            *el profesor es obligatorio
+          </div>
+      </div>
+
+    <div style="text-align: center;">
+      <ion-button (click)="justificar()" [disabled]="!justificaForm.valid" shape="round">
+        Enviar Justificativo
+      </ion-button>
+    </div>
+    
+  </form>
+</ion-content>

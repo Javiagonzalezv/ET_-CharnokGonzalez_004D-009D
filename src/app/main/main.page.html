@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar lines="none">
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-img src="assets/logo.jpg"></ion-img>
+  </ion-card>
+    <ion-card-header text.align="center">
+      <ion-card-title>Bienvenido Alumno/a</ion-card-title>
+    </ion-card-header>
+    
+    <div style="text-align: center;">
+      <ion-button (click)="registro()" fill="solid" shape="round" >
+        Registrar
+      </ion-button>
+    </div>
+    <div style="text-align: center;">
+      <ion-button (click)="inicio()" fill="solid" shape="round" >
+        Iniciar Sesion
+      </ion-button>
+    </div>
+</ion-content>

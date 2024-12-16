@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">asistencia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-content>
+      <ion-item *ngFor="let inscritas in clasesAlumno" (click)="detalleCurso(inscritas)">
+        <ion-label text-align="center">{{inscritas.clase.asistencia}}</ion-label>
+        <ion-label text-align="center">{{inscritas.clase.profesor}}</ion-label>
+        <ion-label text-align="rigth">{{inscritas.clase.fecha}}</ion-label>
+      </ion-item>
+    </ion-content>
+
+    <div *ngIf="clasesAlumno.length === 0">
+      <p style="text-align: center; font-size: medium; font-weight: bold; margin-top: 50px;">Ninguna clase inscrita.</p>
+    </div>
+  </ion-content>
+</ion-content>
