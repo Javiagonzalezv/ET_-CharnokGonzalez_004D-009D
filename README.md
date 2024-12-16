@@ -13,7 +13,7 @@ Para Usar Android Studio
 
 ioni build
 
-npm install @capacitor/android
+npx install @capacitor/android
 
 npm cap add android
 
