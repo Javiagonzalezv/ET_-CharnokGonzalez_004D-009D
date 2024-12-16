@@ -6,6 +6,8 @@ npm install json-server
 
 npm install -g json-server
 
+npm install angularx-qrcode@18.0.2
+
 npm install angularx-qrcode@18.0.2 --save
 
 -------------------------------------
